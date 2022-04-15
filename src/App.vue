@@ -1,10 +1,22 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <!-- Navigation Goes Here -->
+  <main-nav></main-nav>
   <router-view/>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import MainNav from './components/navigation/MainNav.vue'
+
+
+export default defineComponent({
+  components: {
+    MainNav
+  }
+})
+</script>
+
+
 
 <style lang="scss">
 #app {

@@ -1,13 +1,16 @@
 <template>
-    <latest-projects></latest-projects>
+    
+    <project-list></project-list>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import LatestProjects from '../components/projects/LatestProjects.vue'
+import ProjectList from '../components/projects/ProjectList.vue'
+
+
 export default defineComponent({
     components: {
-        LatestProjects
+        ProjectList
     }
 })
 </script>

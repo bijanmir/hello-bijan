@@ -1,7 +1,25 @@
 html {
-  background-color: #96aec4; }
+  background-color: #A3E4DB; }
+
+h1 {
+  font-size: 3rem; }
 
 h2 {
-  color: gold; }
+  font-size: 2rem; }
+
+h1,
+h2 {
+  color: #3a3845 !important; }
+  h1:hover,
+  h2:hover {
+    color: #4D96FF !important;
+    transition: all .5s ease-in-out; }
+  h1:not(:hover),
+  h2:not(:hover) {
+    transition: all 1s ease-in-out; }
+
+i:hover {
+  color: #4D96FF;
+  transition: all 0.3s ease-in; }
 
 /*# sourceMappingURL=main.css.map */

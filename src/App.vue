@@ -31,7 +31,38 @@ export default defineComponent({
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
+// DARK MODE COLORS
+
+.dark-text-1 {
+  color: rgb(41, 162, 179) !important;
+}
+
+.dark-bg-1{
+  background-color: #232323 !important;
+}
+
+.dark-bg-2{
+  background-color: #2f2f2f !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//END DARK MODE
+
+
 
 .main{
   display: block;
@@ -47,24 +78,32 @@ export default defineComponent({
   padding: 0;
 }
 
+@media screen and (min-width: 769px)
+{
+  .columns:not(.is-desktop){
+    display: block;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .lf-side{
+    position: fixed;
+
+  }
+
+  .rt-side{
+    margin-left: 10vw;
+}
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-
 }
 
-nav {
-  a {
-    font-weight: bold;
-    color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 
 
 </style>

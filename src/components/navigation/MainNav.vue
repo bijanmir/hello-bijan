@@ -1,15 +1,20 @@
 <template>
-  <nav>
+  <nav id="nav-bar">
     <div class="logo-container">
       <a href="/"
         ><img class="logo" src="../../assets/imgs/ada_logo.png" alt=""
       /></a>
     </div>
 
-    <div :class="isActive ? 'nav-menu is-active' : 'nav-menu'">
+    <div id="nav-menu" :class="navMenuClass">
+      <label class="switch">
+        <input @click="toggleNightMode" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+
       <div class="social-media">
         <a target="_blank" rel="noreferrer" href="https://github.com/bijanmir">
-            <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-github"></i>
         </a>
         <a
           target="_blank"
@@ -45,9 +50,23 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  computed:{
+    navMenuClass(){
+      if(this.isActive && this.darkMode){
+        return "nav-menu is-active dark-bg-1"
+      }else if(this.isActive && !this.darkMode){
+        return "nav-menu is-active"
+      }else if(this.darkMode && !this.isActive){
+        return "nav-menu dark-bg-1"
+      }else {
+        return "nav-menu"
+      }
+    }
+  },
   data() {
     return {
       isActive: false,
+      darkMode: false,
       routes: [
         {
           home: {
@@ -73,24 +92,66 @@ export default defineComponent({
     toggleActiveClass() {
       this.isActive = !this.isActive;
     },
+    toggleNightMode(){
+      this.darkMode = !this.darkMode;
+      const allH1H2P = document.querySelectorAll("h1, h2,p");
+      const navBar = document.getElementById('nav-bar');
+      const navMenu = document.getElementById('nav-menu');
+      const html = document.querySelector('html');
+      
+      if(this.darkMode == false){
+        navBar?.classList.remove('dark-bg-1')
+        navMenu?.classList.remove('dark-bg-1')
+        html?.classList.remove('dark-bg-2')
+        
+
+        for(let i = 0; i < allH1H2P.length; ++i){
+        allH1H2P[i].classList.remove('dark-text-1')
+      }
+      }else{
+
+        navBar?.classList.add('dark-bg-1')
+        navMenu?.classList.add('dark-bg-1')
+        html?.classList.add('dark-bg-2')
+
+        for(let i = 0; i < allH1H2P.length; ++i){
+        allH1H2P[i].classList.add('dark-text-1')
+      }
+      }
+      
+
+    }
   },
 });
 </script>
 
 
 <style lang="scss" scoped>
-@import url("../../assets/scss/main.scss");
-$nav-color: #222831;
+// @import url("../../assets/scss/main.scss");
+$third-color: #581C0C;
 
+$primary-color: #eeeeee;
+$secondary-color: #25baff;
+$third-color: #db6e14;
+$fourth-color: #4D96FF;
 
 nav {
-  background-color: $nav-color;
+  background-color: $primary-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 10vh;
   padding: 0 1rem;
 
+  a {
+    &.router-link-exact-active {
+      color: $third-color;
+    }
+  }
+
+  .logo-container {
+    z-index: 100;
+  }
 
   .logo {
     width: 10vw;
@@ -101,11 +162,9 @@ nav {
     animation: rotation 5s infinite linear;
   }
 
-  .social-media > a{
+  .social-media > a {
     padding: 10px;
   }
-
-  
 
   @keyframes rotation {
     from {
@@ -118,7 +177,7 @@ nav {
 
   .nav-menu {
     display: none;
-    background-color: $nav-color;
+    background-color: $primary-color;
     padding: 20px 0;
     flex-direction: column;
     align-items: center;
@@ -129,60 +188,95 @@ nav {
     width: 100vw;
     z-index: 20;
     font-size: 2rem;
-
-
   }
   .is-active {
     display: flex;
-    transition: all 0.3s ease-out;
   }
 }
 
-@media only screen and (min-width: 600px) {
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: $secondary-color;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 800px) {
   nav {
     float: left;
     height: 100vh;
     display: flex;
     flex-direction: column-reverse;
-    min-width: 10vw;
+    width: 10vw;
 
     a {
       font-size: 1.5rem;
-      color: #CBF1F5;
+      color: $secondary-color;
       display: block;
       line-height: 51px;
       position: relative;
       text-decoration: none;
 
       i {
-        transition: all 0.3s ease-out;
+        transition: all 0.8s ease-out;
       }
 
-      &:hover {
-        color: gold;
-
-        // i {
-        //   opacity: 0;
-        // }
-
-        &::after {
-          opacity: 1;
-        }
-      }
-
-    //   &:after {
-    //     content: "";
-    //     font-size: 9px;
-    //     letter-spacing: 2px;
-    //     position: absolute;
-    //     bottom: 0;
-    //     display: block;
-    //     width: 100%;
-    //     text-align: center;
-    //     opacity: 0;
-    //     transition: all 0.4s ease-out;
-    //   }
-    
     }
     .logo {
       width: 100px;
@@ -191,21 +285,10 @@ nav {
 
     .nav-menu {
       display: flex;
-      position: inherit;
+      position: relative;
       width: auto;
 
 
-
-      ul > li {
-        color: white;
-        margin: 10px auto;
-      }
-
-      ul > li:hover {
-        color: rgb(17, 142, 224);
-        cursor: pointer;
-        font-size: 1.1rem;
-      }
     }
 
     .social-media {

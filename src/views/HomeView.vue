@@ -1,17 +1,10 @@
 <template>
   <section class="hero">
-    <div class="bg">
+    <fire-fly></fire-fly>
+    <div class="">
       <div class="hero-body">
         <div class="container">
-          <div class="columns">
-            <div class="column">
-                        <p class="title">Hi, I'm Bijan</p>
-          <p class="subtitle">A Software Engineer</p>
-            </div>
-            <div class="column">
-              <span class="right-chevron"><i class="fa-solid fa-chevron-right"></i></span>
-            </div>
-          </div>
+          <h1>Hi, I'm Bijan</h1>
 
         </div>
       </div>
@@ -19,17 +12,19 @@
   </section>
 </template>
 
-<script lang="ts">
+<script lang="ts"> 
 import { defineComponent } from "vue";
+import FireFly from "../components/ui/FireFlies.vue"
 
 let w = window.innerWidth;
 let h = window.innerHeight;
 
-console.log("width: ", w, "height: ", h);
+// console.log("width: ", w, "height: ", h);
 
 
 export default defineComponent({
   name: "HomeView",
+  components: {FireFly},
   computed: {
     hasHitLimit(){
       return w <  600;
@@ -85,7 +80,7 @@ export default defineComponent({
     rgba(85, 123, 131, 1) 100%
   );
   color: rgb(255, 211, 110);
-  animation: AnimateBG 20s ease infinite;
+  animation: AnimateBG 10s ease infinite;
 }
 
 @keyframes AnimateBG {

@@ -119,6 +119,7 @@ export default defineComponent({
       }
       }
       
+      this.toggleActiveClass();
 
     }
   },
@@ -128,11 +129,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 // @import url("../../assets/scss/main.scss");
-$third-color: #581C0C;
+$third-color: #d2a193;
 
-$primary-color: #eeeeee;
-$secondary-color: #25baff;
-$third-color: #db6e14;
+$primary-color: #f7f7f7;
+$secondary-color: #1a729c;
+$third-color: #e8a220;
 $fourth-color: #4D96FF;
 
 nav {

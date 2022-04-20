@@ -1,7 +1,33 @@
 html {
-  background-color: #A3E4DB; }
+  background-color: #066163; }
+
+h1::before {
+  transform: scaleX(0);
+  transform-origin: bottom right; }
+
+h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left; }
+
+h1::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  --notchSize: 20px;
+  -webkit-clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
+  clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
+  z-index: -1;
+  transition: transform .3s ease;
+  border: 2px #4D96FF solid;
+  transition: all 1.2s ease-in-out; }
 
 h1 {
+  position: relative;
   font-size: 3rem; }
 
 h2 {
@@ -9,7 +35,7 @@ h2 {
 
 h1,
 h2 {
-  color: #3a3845 !important; }
+  color: #CDBE78 !important; }
   h1:hover,
   h2:hover {
     color: #4D96FF !important;
@@ -21,5 +47,58 @@ h2 {
 i:hover {
   color: #4D96FF;
   transition: all 0.3s ease-in; }
+
+.module {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 2rem;
+  background: #CDBE78;
+  --notchSize: 20px;
+  -webkit-clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
+  clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize))); }
+
+.shadow {
+  position: relative;
+  background: white;
+  width: 50%;
+  padding: 30px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin: 30px auto;
+  color: #666; }
+
+.shadow:before, .shadow:after {
+  z-index: -1;
+  content: '';
+  width: 50%;
+  height: 10px;
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  right: auto;
+  background: none;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777; }
+
+.shadow:after {
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto; }
 
 /*# sourceMappingURL=main.css.map */

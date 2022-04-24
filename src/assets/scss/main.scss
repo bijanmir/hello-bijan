@@ -1,8 +1,8 @@
 //COLOR VARIABLES
-$primary-color: #CDBE78;
-$secondary-color: #066163;
+$primary-color: #E6CCA9;
+$secondary-color: #009DAE;
 $third-color: #FFD93D;
-$fourth-color: #4D96FF;
+$fourth-color: #F05454;
 
 $header-color: $primary-color;
 
@@ -13,6 +13,10 @@ $header-color: $primary-color;
 $h1: 3rem;
 $h2: 2rem;
 $h3: 1.5rem;
+
+input, textarea{
+  color: $secondary-color !important;
+}
 
 //MAIN STYLES
 
@@ -90,21 +94,32 @@ h2 {
         transition: all 1s ease-in-out;
 
     }
+
+    &::after{
+      color: $third-color !important;
+        transition: all .5s ease-in-out;
+    }
 }
+
 
 
 // ICons
+i {
+  color: $secondary-color;
+}
+
 i:hover {
     color: $fourth-color;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
 }
+
+
 
 .module {
     display: flex;
     justify-content: center;
     margin: 20px;
-    min-width: 300px;
-    max-width: 400px;
+    width: 80vw;
     padding: 2rem;
     background: $primary-color;
     --notchSize: 20px;
@@ -130,6 +145,12 @@ i:hover {
     );
   }
 
+  @media screen and (min-width: 800px) {
+    .module{
+      width: 60vw;
+      max-width: 800px;
+    }
+  }
 
 
   .shadow {

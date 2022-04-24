@@ -129,11 +129,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 // @import url("../../assets/scss/main.scss");
-$third-color: #d2a193;
 
 $primary-color: #f7f7f7;
 $secondary-color: #1a729c;
-$third-color: #e8a220;
+$active-color: #F05454;
 $fourth-color: #4D96FF;
 
 nav {
@@ -146,7 +145,7 @@ nav {
 
   a {
     &.router-link-exact-active {
-      color: $third-color;
+      color: $active-color;
     }
   }
 

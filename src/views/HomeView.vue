@@ -5,15 +5,26 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="main-title">Hi, I'm Bijan</h1>
-          <h3 class="is-size-4">A Software Engineer</h3>
           <div class="module">
-            <ul>
-              <li>Software Engineer</li>
-              <li>Entrepreneur</li>
-              <li>Surfer</li>
-            </ul>
+            <div class="columns">
+              <div class="column">
+                <img
+                  class="profile-img box"
+                  src="../assets/imgs/profile-img.jpeg"
+                  alt=""
+                />
+              </div>
+              <div class="column items">
+                <ul>
+                  <li class="item" v-for="item in aboutMe" :key="item">
+                    {{ item }}
+                  </li>
+                </ul>
+                <button class="button is-success">Hire Me</button>
+                <button class="button">View CV</button>
+              </div>
+            </div>
           </div>
-          
         </div>
       </div>
     </div>
@@ -24,25 +35,18 @@
 import { defineComponent } from "vue";
 import FireFly from "../components/ui/FireFlies.vue";
 
-let w = window.innerWidth;
-let h = window.innerHeight;
-
 // console.log("width: ", w, "height: ", h);
 
 export default defineComponent({
   name: "HomeView",
   components: { FireFly },
-  computed: {
-    hasHitLimit() {
-      return w < 600;
-    },
-  },
   data() {
     return {
-      window: {
-        w: w,
-        h: h,
-      },
+      aboutMe: [
+        "Turned down a full-ride to MIT to pursue my passion of software engineering.",
+        "I work with data.",
+        "A lifelong learner and a techie at heart, I'm always looking for new challenges to tackle.",
+      ],
     };
   },
 });
@@ -50,150 +54,37 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+.button{
+  margin: 5px;
+}
 
 
-.box {
-  background: #111;
-  position: relative;
-  height: 200px;
-  display: flex;
-  align-self: center;
+//ITEM
+.items{
+ display: flex;
+ flex-direction: column;
+}
+
+.item {
+  text-align: left;
+  padding: 10px;
+  &:hover {
+    color: red;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+//PROFILE IMG
+.profile-img {
+  border-radius: 10%;
   width: 100%;
-  overflow: hidden;
+  max-width: 300px;
 }
-.box::before {
-  content: "";
-  background: #111;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.075) 0%, #111 60%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  animation: bg-swing 2s ease-in-out 2s infinite alternate;
-}
-
-@keyframes bg-swing {
-  from {
-    transform: translate3d(-5%, 0, 0);
-  }
-  to {
-    transform: translate3d(5%, 0, 0);
-  }
-}
-.bulb-wire {
-  position: absolute;
-  left: 50%;
-  height: 65px;
-  width: 0;
-  border-left: 1px solid #000;
-  transform: rotate(45deg);
-  transform-origin: 0 0;
-  animation: bulb-swing 2s ease-in-out 2s infinite alternate;
-}
-
-@keyframes bulb-swing {
-  from {
-    transform: rotate(55deg);
-  }
-  to {
-    transform: rotate(-55deg);
-  }
-}
-.fa-lightbulb-o {
-  position: absolute;
-  left: -7px;
-  bottom: -20px;
-  font-size: 25px;
-  transform: rotate(180deg);
-}
-.fa-lightbulb-o::after {
-  content: "";
-  display: block;
-  position: absolute;
-  background: yellow;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-    top: 12px;
-    left: -12px;
-  z-index: -1;
-}
-
-.bulb-glow {
-  background: yellow;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 0, 0.5) 0%, rgba(255, 255, 0, 0) 60%);
-  width: 100px;
-  height: 100px;
-  bottom: -60px;
-  left: 50%;
-  margin-left: -50px;
-  position: absolute;
-  border-radius: 100%;
-  z-index: -1;
-  opacity: 0.25;
-  animation: bulb-light 2s ease-in-out 2s infinite alternate;
-}
-
-@keyframes bulb-light {
-  from {
-    background-color: rgba(255, 255, 0, 0);
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0);
-  }
-}
-.noir,
-.noir span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 380px;
-  margin-left: -190px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 50px;
-  height: 150px;
-  line-height: 166px;
-  margin-top: -75px;
-  perspective: 1000px;
-}
-
-.noir span::before {
-  content: "Welcome";
-  padding: 50px;
-  transform: scaleY(-0.25) skew(20deg);
-  opacity: 0.25;
-  background: linear-gradient(#111 0%, #000 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  text-shadow: 0 0 10px #000;
-  top: 10px;
-  left: 10px;
-  animation: text-shadow 2s linear 2s infinite alternate;
-}
-
-@keyframes text-shadow {
-  0% {
-    transform: scaleY(-0.25) skew(-20deg);
-    left: 40px;
-  }
-  100% {
-    transform: scaleY(-0.25) skew(20deg);
-    left: 0px;
-  }
-}
-
-
-
 
 //HERO STYLE
 .hero {
-
   display: flex;
   flex-direction: column;
-
 }
 
 .hero-body .container {
@@ -204,11 +95,11 @@ export default defineComponent({
 
 //END HERO STYLE
 
-h1{ 
+h1 {
   font-family: "Dancing Script", cursive;
 }
 
-h3{
+h3 {
   color: rgba(0, 157, 255, 0.801);
 }
 
@@ -266,6 +157,9 @@ h3{
 @media screen and (min-width: 600px) {
   .bg {
     height: 100vh;
+  }
+  .columns{
+    display: flex;
   }
 }
 </style>

@@ -1,5 +1,8 @@
+input, textarea {
+  color: #009DAE !important; }
+
 html {
-  background-color: #066163; }
+  background-color: #009DAE; }
 
 h1::before {
   transform: scaleX(0);
@@ -23,7 +26,7 @@ h1::before {
   clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
   z-index: -1;
   transition: transform .3s ease;
-  border: 2px #4D96FF solid;
+  border: 2px #F05454 solid;
   transition: all 1.2s ease-in-out; }
 
 h1 {
@@ -35,31 +38,41 @@ h2 {
 
 h1,
 h2 {
-  color: #CDBE78 !important; }
+  color: #E6CCA9 !important; }
   h1:hover,
   h2:hover {
-    color: #4D96FF !important;
+    color: #F05454 !important;
     transition: all .5s ease-in-out; }
   h1:not(:hover),
   h2:not(:hover) {
     transition: all 1s ease-in-out; }
+  h1::after,
+  h2::after {
+    color: #FFD93D !important;
+    transition: all .5s ease-in-out; }
+
+i {
+  color: #009DAE; }
 
 i:hover {
-  color: #4D96FF;
-  transition: all 0.3s ease-in; }
+  color: #F05454;
+  transition: all 0.2s ease-in; }
 
 .module {
   display: flex;
   justify-content: center;
   margin: 20px;
-  min-width: 300px;
-  max-width: 400px;
+  width: 80vw;
   padding: 2rem;
-  background: #CDBE78;
+  background: #E6CCA9;
   --notchSize: 20px;
   -webkit-clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
   clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize))); }
 
+@media screen and (min-width: 800px) {
+  .module {
+    width: 60vw;
+    max-width: 800px; } }
 .shadow {
   position: relative;
   background: white;

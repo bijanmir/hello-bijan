@@ -3,7 +3,7 @@
         <div class="container">
         <h2 class="title is-2 is-capitalized">Contact Me</h2>
 
-        <form>
+        <form class="form box">
             <div class="field">
                 <label for="name" class="label is-size-4 has-text-weight-light"></label>
                 <div class="control has-icons-left">
@@ -31,3 +31,16 @@
         </div>
     </section>
 </template>
+
+<style scoped>
+
+
+.form{
+    max-width: 500px;
+}
+
+.container{
+    text-align: -webkit-center;
+}
+</style>
+

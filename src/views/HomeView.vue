@@ -1,18 +1,6 @@
 <template>
   <section class="hero">
     <fire-fly></fire-fly>
-<div class='box'>
-  <div class='bulb-wire'>
-    <div class='fa fa-lightbulb-o'></div>
-    <div class='bulb-glow'></div>
-  </div>
-  <div class='noir'>
-    <span>
-      Welcome
-    </span>
-  </div>
-</div>
-
     <div class="">
       <div class="hero-body">
         <div class="container">

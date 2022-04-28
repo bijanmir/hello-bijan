@@ -574,6 +574,7 @@ h3 {
   .profile-img{
     display: flex;
     align-items: center;
+    align-self: center;
   }
 
 

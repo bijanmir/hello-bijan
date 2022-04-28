@@ -275,6 +275,7 @@ input:checked + .slider:before {
 
       i {
         transition: all 0.8s ease-out;
+        
       }
 
     }
@@ -287,9 +288,8 @@ input:checked + .slider:before {
       display: flex;
       position: relative;
       width: auto;
-
-
     }
+
 
     .social-media {
       display: flex;
@@ -304,5 +304,40 @@ input:checked + .slider:before {
       display: none;
     }
   }
+
+// Hover effect to change from icon to item-title
+  .home > a > i:hover{
+
+        transition: all 0.8s ease-out;
+
+    &::before{
+            content: '';
+          }
+          &::after{
+
+            content: 'Home';
+          }
+  }  
+  
+  .projects > a > i:hover{
+    &::before{
+            content: '';
+          }
+          &::after{
+
+            content: 'Projects';
+          }
+  }  
+
+  .contact > a > i:hover{
+    &::before{
+            content: '';
+          }
+          &::after{
+
+            content: 'Contact';
+          }
+  }
+
 }
 </style>

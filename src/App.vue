@@ -38,8 +38,12 @@ export default defineComponent({
   color: rgb(41, 162, 179) !important;
 }
 
+// .dark-bg-1{
+//   background-color: #232323 !important;
+// }
+
 .dark-bg-1{
-  background-color: #232323 !important;
+  background-color: $primary !important;
 }
 
 .dark-bg-2{

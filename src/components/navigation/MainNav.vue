@@ -316,6 +316,7 @@ input:checked + .slider:before {
           &::after{
 
             content: 'Home';
+            font-size: .8rem;
           }
   }  
   
@@ -326,6 +327,8 @@ input:checked + .slider:before {
           &::after{
 
             content: 'Projects';
+            font-size: .8rem;
+
           }
   }  
 
@@ -336,6 +339,8 @@ input:checked + .slider:before {
           &::after{
 
             content: 'Contact';
+            font-size: .8rem;
+
           }
   }
 

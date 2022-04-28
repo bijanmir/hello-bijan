@@ -1,7 +1,7 @@
 <template>
     <section class="section">
         <div class="container">
-        <h2 class="title is-2 is-capitalized">Contact Me</h2>
+        <h2 class="title is-2 is-capitalized">I'd Love To Hear From You.</h2>
 
         <form class="form box">
             <div class="field">
@@ -31,6 +31,8 @@
         </div>
     </section>
 </template>
+ 
+
 
 <style scoped>
 

@@ -8,7 +8,7 @@
           <h1 class="main-title">Hi, I'm Bijan</h1>
           <div class="module">
             <div class="columns">
-              <div class="column profile-image">
+              <div class="column profile-image" id="profile-img">
                 <div class="container box">
                   <div class="reflection-container">
                     <a
@@ -563,6 +563,11 @@ h3 {
     width: 250px;
   }
 
+    #profile-img {
+    align-self: center;
+
+  }
+
 @media screen and (min-width: 600px) {
   .bg {
     height: 100vh;
@@ -570,15 +575,6 @@ h3 {
   .columns {
     display: flex;
   }
-
-  .profile-img{
-    display: flex;
-    align-items: center;
-    align-self: center;
-  }
-
-
-
 }
 </style>
 

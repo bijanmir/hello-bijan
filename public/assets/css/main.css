@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 input, textarea {
   color: #009DAE !important; }
+  input:focus, textarea:focus {
+    border: 0;
+    border-bottom: #F05454 solid 2px !important; }
 
 html {
   background-color: #009DAE; }
@@ -51,9 +54,6 @@ h2 {
   h2::after {
     color: #FFD93D !important;
     transition: all .5s ease-in-out; }
-
-i {
-  color: #009DAE; }
 
 i:hover {
   color: #F05454;

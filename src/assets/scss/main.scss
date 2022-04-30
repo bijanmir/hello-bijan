@@ -1,8 +1,6 @@
-//COLOR VARIABLES
-$primary-color: #E6CCA9;
-$secondary-color: #009DAE;
-$third-color: #FFD93D;
-$fourth-color: #F05454;
+@import './variables';
+
+
 
 $header-color: $primary-color;
 
@@ -16,6 +14,10 @@ $h3: 1.5rem;
 
 input, textarea{
   color: $secondary-color !important;
+  &:focus{
+    border: 0;
+    border-bottom: $fourth-color solid 2px !important;
+  }
 }
 
 //MAIN STYLES
@@ -104,9 +106,7 @@ h2 {
 
 
 // ICons
-i {
-  color: $secondary-color;
-}
+
 
 i:hover {
     color: $fourth-color;

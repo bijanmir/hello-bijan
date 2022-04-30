@@ -43,22 +43,12 @@ export default defineComponent({
 // }
 
 .dark-bg-1{
-  background-color: $primary !important;
+  background-color: $primary-color !important;
 }
 
 .dark-bg-2{
-  background-color: #2f2f2f !important;
+  background-color: $primary-dark !important;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

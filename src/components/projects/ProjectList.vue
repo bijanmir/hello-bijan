@@ -41,7 +41,7 @@ export default defineComponent({
           projectName: "Arrow",
           url: "https://www.arrow.com/",
           img: "https://cdn.phenompeople.com/CareerConnectResources/ARELUS/en_us/common/image_gallery/Arrow%20-%20The%20Ultimate%20Technology%20Enabler-1559762138562.png",
-          desc: 'Technology leader across mobile, fixed and cloud networks, our solutions enable a more productive, sustainable and inclusive world.'
+          desc: 'American Fortune 500 company headquartered in Centennial, Colorado. The company specializes in distribution and value added services relating to electronic components and computer products'
         },
         {
           projectName: "Fine Transportation",
@@ -57,13 +57,6 @@ export default defineComponent({
           desc: 'Infosys is a global leader in next-generation digital services and consulting.'
 
         },
-        // {
-        //   projectName: "Tripper Island",
-        //   url: "#",
-        //   img: "https://images.unsplash.com/photo-1610483463656-9680e071d8c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-        //   desc: 'Trippy, Hippie, Psychedelic Decor · Tapestries · Posters · Curtains · Stickers · Flags · Blankets · Lights · Incense.'
-
-        // },
         {
           projectName: "AdMarketingPPC",
           url: "https://admarketingppc.com",

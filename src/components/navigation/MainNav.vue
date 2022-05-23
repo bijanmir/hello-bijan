@@ -185,7 +185,7 @@ nav {
     height: 90vh;
     top: 10vh;
     left: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 20;
     font-size: 2rem;
   }
